@@ -5,7 +5,7 @@ public class AscHacker extends Hacker{
     private Long startTime;
     private LocalDateTime startLocalTime;
 
-    public AscHacker(CountDownLatch countDownLatch, Vault vault) {
+    public AscHacker(CountDownLatch countDownLatch, SimpleVault vault) {
         super(countDownLatch,vault);
         this.startTime = System.currentTimeMillis();
         this.startLocalTime = LocalDateTime.now();

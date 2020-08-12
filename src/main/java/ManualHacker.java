@@ -11,7 +11,7 @@ public class ManualHacker extends Hacker{
     private BufferedReader in;
 
 
-    public ManualHacker(CountDownLatch countDownLatch, Vault vault, Socket s) {
+    public ManualHacker(CountDownLatch countDownLatch, SimpleVault vault, Socket s) {
         super(countDownLatch, vault);
         this.startTime = System.currentTimeMillis();
         this.startLocalTime = LocalDateTime.now();

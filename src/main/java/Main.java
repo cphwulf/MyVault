@@ -31,7 +31,7 @@ public class Main {
                 CountDownLatch countDownLatch = new CountDownLatch(4);
                 count++;
                 //Vault vault = new Vault(rd.nextInt(MAX_PASSWORD));
-                Vault vault = new Vault(1234);
+                SimpleVault vault = new SimpleVault(1234);
                 List<Thread> threadList = new ArrayList<>();
                 Hacker a = new AscHacker(countDownLatch,vault);
                 threadList.add(a);

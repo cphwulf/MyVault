@@ -1,19 +1,24 @@
 import java.time.LocalDateTime;
 import java.util.concurrent.CountDownLatch;
 
-public class DescHacker extends Hacker{
+public class DescHacker implements Hacker{
 
     private Long startTime;
     private LocalDateTime startLocalTime;
+    private Hacker hacker;
 
-    public DescHacker(CountDownLatch countDownLatch, Vault vault) {
+    public DescHacker(Hacker hacker) {
+        this.hacker = hacker;
+    }
+
+    public DescHacker(CountDownLatch countDownLatch, SimpleVault vault) {
         super(countDownLatch,vault);
         this.startTime = System.currentTimeMillis();
         this.startLocalTime = LocalDateTime.now();
     }
 
     @Override
-    public boolean doGuess(Vault vault, int guess) {
+    public boolean doGuess(SimpleVault vault, int guess) {
         return this.vault.isCorrect(guess);
     }
 
